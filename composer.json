@@ -1,0 +1,22 @@
+{
+    "description": "",
+    "type": "neos-site",
+    "require": {
+        "neos/neos": "*",
+        "neos/nodetypes": "*"
+    },
+    "suggest": {
+        "neos/seo": "*"
+    },
+    "name": "js/therapieox",
+    "autoload": {
+        "psr-4": {
+            "Js\\TherapieOx\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Js.TherapieOx"
+        }
+    }
+}
