@@ -1,7 +1,16 @@
 /**
  * Root Fusion template for the Therapie Ochsenhausen site
  */
-page = Neos.Neos:Page {
+
+root {
+	default {
+		type = ${q(node).property('_nodeType') + '.Document'}
+		renderPath >
+	}
+}
+
+prototype(Neos.NodeTypes:Page.Document) >
+prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 	head {
 		stylesheets.site = Neos.Fusion:Template {
 			templatePath = 'resource://Js.TherapieOx/Private/Templates/Page/Default.html'
@@ -35,3 +44,6 @@ page = Neos.Neos:Page {
 		}
 	}
 }
+
+prototype(Js.TherapieOx:PortalPage.Document) < prototype(Neos.NodeTypes:Page.Document)
+prototype(Js.TherapieOx:HomePage.Document) < prototype(Neos.NodeTypes:Page.Document)

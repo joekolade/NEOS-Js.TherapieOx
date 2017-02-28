@@ -6,3 +6,24 @@
 #  childNodes:
 #    'sidebar':
 #      type: 'Neos.Neos:ContentCollection'
+
+# PortalPage
+'Js.TherapieOx:PortalPage':
+  superTypes:
+    'Neos.NodeTypes:Page': true
+  ui:
+    label: 'Portal Seite'
+    group: 'general'
+    icon: 'icon-columns'
+
+# Homepage for each area
+'Js.TherapieOx:HomePage':
+  superTypes:
+    'Neos.NodeTypes:Page': true
+  ui:
+    label: 'Startseite'
+    group: 'general'
+    icon: 'icon-home'
+#  childNodes:
+#    'sidebar':
+#      type: 'Neos.Neos:ContentCollection'
