@@ -24,9 +24,7 @@
     label: 'Startseite'
     group: 'general'
     icon: 'icon-home'
-#  childNodes:
-#    'sidebar':
-#      type: 'Neos.Neos:ContentCollection'
+
 
 # Vita Element
 'Js.TherapieOx:Vitaitem':
