@@ -26,6 +26,49 @@
     icon: 'icon-home'
 
 
+aloha-default:
+  'format': # Enable specific formatting options.
+    'strong': true
+    'b': false
+    'em': true
+    'i': false
+    'u': true
+    'sub': true
+    'sup': true
+    'p': true
+    'h1': true
+    'h2': true
+    'h3': true
+    'h4': false
+    'h5': false
+    'h6': false
+    'code': false
+    'removeFormat': true
+  'table':
+    'table': true
+  'link':
+    'a': true
+  'list':
+    'ul': true
+    'ol': true
+  'alignment':
+    'left': true
+    'center': true
+    'right': true
+    'justify': true
+  'formatlesspaste':
+    # Show toggle button for formatless pasting.
+    'button': true
+    # Whether the formatless pasting should be enable by default.
+    'formatlessPasteOption': false
+    # If not set the default setting is used: 'a', 'abbr', 'b', 'bdi', 'bdo', 'cite', 'code', 'del', 'dfn',
+    # 'em', 'i', 'ins', 'kbd', 'mark', 'q', 'rp', 'rt', 'ruby', 's', 'samp', 'small', 'strong', 'sub', 'sup',
+    # 'time', 'u', 'var'
+    'strippedElements': ['a']
+  'autoparagraph': true # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+
+
 # Vita Element
 'Js.TherapieOx:Vitaitem':
   superTypes:
@@ -46,3 +89,4 @@
       ui:
         label: 'Text'
         inlineEditable: true
+        aloha: aloha-default
