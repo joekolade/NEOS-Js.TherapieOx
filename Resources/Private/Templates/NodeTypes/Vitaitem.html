@@ -3,9 +3,7 @@
 <article class="vitaitem">
         <header>
                 <b class="headline">{neos:contentElement.editable(property: 'headline')}</b>
-                <f:if condition="{headline}">
-                    <b class="subheadline">{neos:contentElement.editable(property: 'headline')}</b>
-                </f:if>
+                <b class="subheadline">{neos:contentElement.editable(property: 'subheadline')}</b>
         </header>
         <div>
                 {neos:contentElement.editable(property: 'text')}
