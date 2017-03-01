@@ -33,8 +33,8 @@ aloha-default: &aloha-default
     'em': true
     'i': false
     'u': true
-    'sub': true
-    'sup': true
+    'sub': false
+    'sup': false
     'p': true
     'h1': true
     'h2': true
@@ -45,20 +45,20 @@ aloha-default: &aloha-default
     'code': false
     'removeFormat': true
   'table':
-    'table': true
+    'table': false
   'link':
     'a': true
   'list':
     'ul': true
-    'ol': true
+    'ol': false
   'alignment':
     'left': true
     'center': true
     'right': true
-    'justify': true
+    'justify': false
   'formatlesspaste':
     # Show toggle button for formatless pasting.
-    'button': true
+    'button': false
     # Whether the formatless pasting should be enable by default.
     'formatlessPasteOption': false
     # If not set the default setting is used: 'a', 'abbr', 'b', 'bdi', 'bdo', 'cite', 'code', 'del', 'dfn',
