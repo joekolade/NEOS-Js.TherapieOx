@@ -48,6 +48,6 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 prototype(Js.TherapieOx:PortalPage.Document) < prototype(Neos.NodeTypes:Page.Document)
 prototype(Js.TherapieOx:HomePage.Document) < prototype(Neos.NodeTypes:Page.Document)
 
-#prototype(Js.TherapieOx:Vitaitem) < prototype(Neos.Neos:Content) {
-	# templatePath = 'resource://Js.TherapieOx/Private/Templates/FusionObjects/Vitaitem.html'
-#}
+prototype(Js.TherapieOx:Vitaitem) < prototype(Neos.Neos:Content) {
+	templatePath = 'resource://Js.TherapieOx/Private/Templates/FusionObjects/Vitaitem.html'
+}

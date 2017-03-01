@@ -31,7 +31,7 @@
 # Vita Element
 'Js.TherapieOx:Vitaitem':
   superTypes:
-    'Neos.Neos:Content': TRUE
+    'Neos.Neos:Content': true
   ui:
     label: 'My first custom content element'
     group: 'general'
@@ -41,9 +41,9 @@
       defaultValue: 'Replace by your headline value ...'
       ui:
         label: 'Headline'
-        inlineEditable: TRUE
+        inlineEditable: true
     text:
       type: string
       ui:
         label: 'Text'
-        inlineEditable: TRUE
+        inlineEditable: true
