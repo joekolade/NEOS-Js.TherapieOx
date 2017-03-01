@@ -36,16 +36,3 @@
     label: 'Vita Element'
     group: 'general'
     #icon: ''
-  properties:
-    headline:
-      type: string
-      defaultValue: '2017'
-      ui:
-        label: 'Header'
-        inlineEditable: TRUE
-    text:
-      type: string
-      ui:
-        label: 'Text'
-        inlineEditable: TRUE
-
