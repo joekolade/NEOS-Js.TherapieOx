@@ -33,17 +33,18 @@
   superTypes:
     'Neos.Neos:Content': true
   ui:
-    label: 'My first custom content element'
+    label: 'Vita Eintrag'
     group: 'general'
   properties:
     headline:
       type: string
-      defaultValue: 'Replace by your headline value ...'
+      defaultValue: '2017'
       ui:
         label: 'Headline'
         inlineEditable: true
     text:
       type: string
+      defaultValue: 'Hier darf Text rein'
       ui:
         label: 'Text'
         inlineEditable: true
