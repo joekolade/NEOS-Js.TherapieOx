@@ -89,5 +89,4 @@ aloha-default: &aloha-default
       ui:
         label: 'Text'
         inlineEditable: true
-        aloha:
-          <<: *aloha-default
+        aloha: *aloha-default
