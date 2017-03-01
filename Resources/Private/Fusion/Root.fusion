@@ -27,7 +27,9 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 		templatePath = 'resource://Js.TherapieOx/Private/Templates/Page/Default.html'
 		sectionName = 'body'
 		parts {
-			menu = Neos.Neos:Menu
+			menu = Neos.Neos:Menu {
+				maximumLevels = 8
+			}
 		}
 
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
