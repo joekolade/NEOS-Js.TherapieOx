@@ -1,0 +1,4 @@
+Neos:
+  Neos:
+    userInterface:
+      defaultLanguage: 'de'

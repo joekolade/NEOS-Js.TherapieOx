@@ -26,6 +26,7 @@
     icon: 'icon-home'
 
 
+# Aloha default config
 aloha-default: &aloha-default
   'format': # Enable specific formatting options.
     'strong': true
@@ -82,6 +83,12 @@ aloha-default: &aloha-default
       defaultValue: '2017'
       ui:
         label: 'Headline'
+        inlineEditable: true
+    subheadline:
+      type: string
+      defaultValue: 'bis 2018'
+      ui:
+        label: 'zusätliche Headline'
         inlineEditable: true
     text:
       type: string
