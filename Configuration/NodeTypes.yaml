@@ -33,6 +33,17 @@
   superTypes:
     'Neos.Neos:Content': TRUE
   ui:
-    label: 'Vita Element'
+    label: 'My first custom content element'
     group: 'general'
-    #icon: ''
+  properties:
+    headline:
+      type: string
+      defaultValue: 'Replace by your headline value ...'
+      ui:
+        label: 'Headline'
+        inlineEditable: TRUE
+    text:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
