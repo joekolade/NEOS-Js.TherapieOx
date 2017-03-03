@@ -3,38 +3,50 @@
 # Template are visible on your page.
 ---
 
+
 'Neos.NodeTypes:Page':
-  ui:
-    inspector:
-      groups:
-        js:
-          label: 'Seitendaten'
-          icon: 'icon-anchor'
-          position: 1
+  childNodes:
+    'main':
+      constraints:
+        nodeTypes:
+          'Neos.NodeTypes:Headline': TRUE
+          'Neos.NodeTypes:Text': TRUE
+          'Neos.NodeTypes:Image': TRUE
+          'Neos.NodeTypes:Html': TRUE
+          'Neos.NodeTypes:TwoColumn': TRUE
+          'Js.TherapieOx:Vitaitem': TRUE
+          '*': FALSE
   properties:
+    backgroundimage:
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        label: 'Hintergrund Bild'
+        inspector:
+          group: 'document'
+          editorOptions:
+            features:
+              crop: TRUE
+              resize: TRUE
     area:
       type: string
-      defaultValue: 'firstChildNode'
+      defaultValue: 'both'
       ui:
         label: 'Zugehörigkeit'
         reloadIfChanged: TRUE
         inspector:
-          group: 'js'
+          group: 'document'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
-              mah:
+              'mah':
                 label: 'Mirjam'
                 icon: 'icon-female'
-              gs:
+              'gs':
                 label: 'Günter'
                 icon: 'icon-male'
-              both:
+              'both':
                 label: 'Beide'
                 icon: 'users'
-#  childNodes:
-#    'sidebar':
-#      type: 'Neos.Neos:ContentCollection'
 
 # PortalPage
 'Js.TherapieOx:PortalPage':
@@ -47,7 +59,7 @@
     inspector:
       groups:
         js:
-          label: 'Seitendaten'
+          label: 'Startseiten-Daten'
           icon: 'icon-anchor'
           position: 1
   properties:
@@ -56,6 +68,12 @@
       ui:
         label: 'Seiten Titel'
         reloadIfChanged: TRUE
+        inspector:
+          group: 'js'
+    piwikid:
+      type: string
+      ui:
+        label: 'Piwik Site-Id'
         inspector:
           group: 'js'
 
