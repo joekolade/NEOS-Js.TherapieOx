@@ -2,7 +2,36 @@
 # to your pages. You can add as many areas as you like, still only those that are rendered in your Fusion-code and
 # Template are visible on your page.
 ---
-#'Neos.NodeTypes:Page':
+
+'Neos.NodeTypes:Page':
+  ui:
+    inspector:
+      groups:
+        js:
+          label: 'Seitendaten'
+          icon: 'icon-anchor'
+          position: 1
+  properties:
+    area:
+      type: string
+      defaultValue: 'firstChildNode'
+      ui:
+        label: 'Zugehörigkeit'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'js'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              mah:
+                label: 'Mirjam'
+                icon: 'icon-female'
+              gs:
+                label: 'Günter'
+                icon: 'icon-male'
+              both:
+                label: 'Beide'
+                icon: 'users'
 #  childNodes:
 #    'sidebar':
 #      type: 'Neos.Neos:ContentCollection'
@@ -15,6 +44,21 @@
     label: 'Portal Seite'
     group: 'general'
     icon: 'icon-columns'
+    inspector:
+      groups:
+        js:
+          label: 'Seitendaten'
+          icon: 'icon-anchor'
+          position: 1
+  properties:
+    siteheadline:
+      type: string
+      ui:
+        label: 'Seiten Titel'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'js'
+
 
 # Homepage for each area
 'Js.TherapieOx:HomePage':
