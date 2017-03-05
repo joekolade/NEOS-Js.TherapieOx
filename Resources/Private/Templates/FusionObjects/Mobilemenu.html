@@ -1,24 +1,24 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 
-<ul class="vertical menu" data-accordion-menu>
     <f:for each="{items}" as="item">
-        <f:comment>
-            No links on level 1
-            instead go directly to level 2
-        </f:comment>
-        <f:if condition="{item.subItems}">
-            <f:render section="submenu" arguments="{items: item.subItems, parentarea: item.property.area}"></f:render>
-        </f:if>
+        <div class="{item.property.area}">
+            <f:if condition="{item.property.area} != 'both'">
+                <f:then>
+                    <p class="header">{item.label}</p>
+                </f:then>
+            </f:if>
+            <f:if condition="{item.subItems}">
+                <ul class="vertical menu" data-accordion-menu>
+                    <f:render section="submenu" arguments="{items: item.subItems}"></f:render>
+                </ul>
+            </f:if>
+        </div>
     </f:for>
-</ul>
 
 <f:section name="submenu">
     <f:if condition="{level}"><ul class="menu vertical nested"></f:if>
     <f:for each="{items}" as="item">
-        <f:comment>
-            Since shortcuts can not have areas themselves we llokup the area of the parent instead
-        </f:comment>
-        <li class="{f:if(condition: item.property.area, then: item.property.area, else: parentarea)}">
+        <li>
             <neos:link.node node="{item.node}" />
             <f:if condition="{item.subItems}">
                 <f:render section="submenu" arguments="{items: item.subItems, level: 1}"></f:render>

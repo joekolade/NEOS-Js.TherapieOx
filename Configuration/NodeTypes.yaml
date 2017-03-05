@@ -27,6 +27,15 @@
             features:
               crop: TRUE
               resize: TRUE
+    # mobilenavititle:
+    #   type: string
+    #   defaultValue: ''
+    #   ui:
+    #     label: 'Seitenbezeichnung im mobilen Menü'
+    #     reloadIfChanged: TRUE
+    #     inspector:
+    #       group: 'document'
+    #       position: end
     area:
       type: string
       defaultValue: 'both'
