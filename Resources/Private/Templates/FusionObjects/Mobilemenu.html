@@ -19,7 +19,7 @@
     <f:if condition="{level}"><ul class="menu vertical nested"></f:if>
     <f:for each="{items}" as="item">
         <li>
-            <neos:link.node node="{item.node}" />
+            <neos:link.node node="{item.node}" rel="nofollow" />
             <f:if condition="{item.subItems}">
                 <f:render section="submenu" arguments="{items: item.subItems, level: 1}"></f:render>
             </f:if>
