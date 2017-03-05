@@ -58,6 +58,14 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 			# menu = Neos.Neos:Menu {
 			# 	maximumLevels = 8
 			# }
+
+			footermenu = Menu
+		    footermenu {
+		        entryLevel = 2
+		        templatePath = 'resource://Js.TherapieOx/Private/Templates/FusionObjects/Footermenu.html'
+		        maximumLevels = 1
+		        startingPoint = ${q(site).children('[uriPathSegment="meta"]').get(0)}
+		    }
 		}
 
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
