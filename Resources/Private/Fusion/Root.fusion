@@ -55,13 +55,13 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 			    maximumLevels = 3
 			}
 
-			mobilmenu = Js.TherapieOx:Menu {
+			mobilemenu = Js.TherapieOx:Menu {
 				templatePath = 'resource://Js.TherapieOx/Private/Templates/FusionObjects/MobileMenu.html'
 			}
 
 			footermenu = Menu
 		    footermenu {
-		        entryLevel = 2
+		        entryLevel = 1
 		        templatePath = 'resource://Js.TherapieOx/Private/Templates/FusionObjects/FooterMenu.html'
 		        maximumLevels = 1
 		        startingPoint = ${q(site).children('[uriPathSegment="meta"]').get(0)}
