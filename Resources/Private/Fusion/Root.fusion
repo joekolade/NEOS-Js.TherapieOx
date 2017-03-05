@@ -61,7 +61,7 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 
 			footermenu = Menu
 		    footermenu {
-		        entryLevel = 1
+		        #entryLevel = 1
 		        templatePath = 'resource://Js.TherapieOx/Private/Templates/FusionObjects/FooterMenu.html'
 		        maximumLevels = 1
 		        startingPoint = ${q(site).children('[uriPathSegment="meta"]').get(0)}
