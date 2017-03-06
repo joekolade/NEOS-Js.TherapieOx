@@ -81,6 +81,14 @@ usedNodeTypesColumns: &usedNodeTypesColumns
           icon: 'icon-anchor'
           position: 1
   properties:
+    area:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              'all':
+                label: 'Startseite'
+                icon: 'asterisk'
     siteheadline:
       type: string
       ui:
