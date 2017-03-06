@@ -94,6 +94,16 @@ prototype(Js.TherapieOx:Menu).@class = 'Js\\TherapieOx\\Fusion\\MenuImplementati
 prototype(Js.TherapieOx:PortalPage.Document) < prototype(Neos.NodeTypes:Page.Document)
 prototype(Js.TherapieOx:HomePage.Document) < prototype(Neos.NodeTypes:Page.Document)
 
-# prototype(Js.TherapieOx:Vitaitem) < prototype(Neos.Neos:Content) {
-# 	templatePath = 'resource://Js.TherapieOx/Private/Templates/FusionObjects/Vitaitem.html'
-# }
+
+prototype(Js.TherapieOx:Twocolumns) < prototype(Neos.Neos:Content) {
+        templatePath = 'resource://Js.TherapieOx/Private/Templates/NodeTypes/Twocolumns.html'
+
+        column0Content = Neos.Neos:ContentCollection
+        column0Content {
+                nodePath = 'column0'
+        }
+        column1Content = Neos.Neos:ContentCollection
+        column1Content {
+                nodePath = 'column1'
+        }
+}

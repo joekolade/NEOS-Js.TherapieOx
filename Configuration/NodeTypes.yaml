@@ -3,19 +3,28 @@
 # Template are visible on your page.
 ---
 
+usedNodeTypes: &usedNodeTypes
+  'Neos.NodeTypes:Headline': TRUE
+  'Neos.NodeTypes:Text': TRUE
+  'Neos.NodeTypes:Image': TRUE
+  'Neos.NodeTypes:Html': TRUE
+  'Js.TherapieOx:Vitaitem': TRUE
+  'Js.TherapieOx:Twocolumns': TRUE
+  #'Neos.NodeTypes:TwoColumn': TRUE
+  '*': FALSE
+usedNodeTypesColumns: &usedNodeTypesColumns
+  'Neos.NodeTypes:Headline': TRUE
+  'Neos.NodeTypes:Text': TRUE
+  'Neos.NodeTypes:Image': TRUE
+  'Neos.NodeTypes:Html': TRUE
+  'Js.TherapieOx:Vitaitem': TRUE
+  '*': FALSE
 
 'Neos.NodeTypes:Page':
   childNodes:
     'main':
       constraints:
-        nodeTypes:
-          'Neos.NodeTypes:Headline': TRUE
-          'Neos.NodeTypes:Text': TRUE
-          'Neos.NodeTypes:Image': TRUE
-          'Neos.NodeTypes:Html': TRUE
-          'Neos.NodeTypes:TwoColumn': TRUE
-          'Js.TherapieOx:Vitaitem': TRUE
-          '*': FALSE
+        nodeTypes: *usedNodeTypes
   properties:
     backgroundimage:
       type: 'Neos\Media\Domain\Model\ImageInterface'
@@ -151,8 +160,8 @@ aloha-default: &aloha-default
     inspector:
       groups:
         js:
-          label: 'Vita'
-          icon: 'icon-asterisk'
+          label: 'Einstellungen'
+          icon: 'icon-gears'
           position: 1
   properties:
     headline:
@@ -188,3 +197,53 @@ aloha-default: &aloha-default
         reloadIfChanged: TRUE
         inspector:
           group: 'js'
+
+
+# 2 Spalter
+'Js.TherapieOx:Twocolumns':
+  superTypes:
+    - 'Neos.Neos:Content'
+  ui:
+    group: general
+    label: '2 Spalter'
+    icon: icon-columns
+    inlineEditable: true
+    inspector:
+      groups:
+        js:
+          label: 'Einstellungen'
+          icon: 'icon-gears'
+          position: 1
+  properties:
+    area:
+      type: string
+      defaultValue: 'inherit'
+      ui:
+        label: 'Zugehörigkeit'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'js'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'inherit':
+                label: 'vererbt (wie Seite)'
+                icon: 'icon-child'
+              'mah':
+                label: 'Mirjam'
+                icon: 'icon-female'
+              'gs':
+                label: 'Günter'
+                icon: 'icon-male'
+              'both':
+                label: 'Beide'
+                icon: 'users'
+  childNodes:
+    column0:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes: *usedNodeTypesColumns
+    column1:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes: *usedNodeTypesColumns
