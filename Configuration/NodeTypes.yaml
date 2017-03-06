@@ -148,6 +148,12 @@ aloha-default: &aloha-default
   ui:
     label: 'Vita Eintrag'
     group: 'general'
+    inspector:
+      groups:
+        js:
+          label: 'Vita'
+          icon: 'icon-asterisk'
+          position: 1
   properties:
     headline:
       type: string
@@ -157,7 +163,7 @@ aloha-default: &aloha-default
         inlineEditable: true
     subheadline:
       type: string
-      defaultValue: 'bis 2018'
+      #defaultValue: ''
       ui:
         label: 'zusätliche Headline'
         inlineEditable: true
@@ -168,3 +174,15 @@ aloha-default: &aloha-default
         label: 'Text'
         inlineEditable: true
         aloha: *aloha-default
+    'since':
+      type: boolean
+      ui:
+        label: '"Seit" vor Datum'
+        inspector:
+          group: 'js'
+    'until':
+      type: boolean
+      ui:
+        label: '"bis" zwischen Datum'
+        inspector:
+          group: 'js'

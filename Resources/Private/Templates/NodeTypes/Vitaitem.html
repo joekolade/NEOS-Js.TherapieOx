@@ -1,11 +1,20 @@
-{namespace neos=Neos\Neos\ViewHelpers}
-{namespace media=Neos\Media\ViewHelpers}
-<article class="vitaitem">
-        <header>
-                <b class="headline">{neos:contentElement.editable(property: 'headline')}</b>
-                <b class="subheadline">{neos:contentElement.editable(property: 'subheadline')}</b>
-        </header>
-        <div>
-                {neos:contentElement.editable(property: 'text')}
+{namespace neos=Neos\Neos\ViewHelpers} {namespace media=Neos\Media\ViewHelpers}
+<div class="row vita--item">
+    <div class="columns small-12 medium-2 vita--date">
+        <div class="vita--date-from">
+            <f:if condition="{since}">
+                <div class="vita--date-until">seit</div>
+            </f:if>
+            {neos:contentElement.editable(property: 'headline')}
         </div>
-</article>
+        <div class="vita--date-to">
+            <f:if condition="{until}">
+                <div class="vita--date-until">bis</div>
+            </f:if>
+            {neos:contentElement.editable(property: 'subheadline')}
+        </div>
+    </div>
+    <div class="columns small-12 medium-9 vita--content">
+        {neos:contentElement.editable(property: 'text')}
+    </div>
+</div>
