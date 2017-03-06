@@ -160,7 +160,7 @@ aloha-default: &aloha-default
     inspector:
       groups:
         js:
-          label: 'Einstellungen'
+          label: 'Vita-Einstellungen'
           icon: 'icon-gears'
           position: 1
   properties:
