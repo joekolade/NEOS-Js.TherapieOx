@@ -178,11 +178,13 @@ aloha-default: &aloha-default
       type: boolean
       ui:
         label: '"Seit" vor Datum'
+        reloadIfChanged: TRUE
         inspector:
           group: 'js'
     'until':
       type: boolean
       ui:
         label: '"bis" zwischen Datum'
+        reloadIfChanged: TRUE
         inspector:
           group: 'js'
