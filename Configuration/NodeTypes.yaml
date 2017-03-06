@@ -164,33 +164,18 @@ aloha-default: &aloha-default
           icon: 'icon-gears'
           position: 1
   properties:
-    headline:
-      type: string
-      defaultValue: '2017'
-      ui:
-        label: 'Headline'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'js'
-    subheadline:
-      type: string
-      #defaultValue: ''
-      ui:
-        label: 'zusätliche Headline'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'js'
-    text:
-      type: string
-      defaultValue: 'Hier darf Text rein'
-      ui:
-        label: 'Text'
-        inlineEditable: true
-        aloha: *aloha-default
     'since':
       type: boolean
       ui:
         label: '"Seit" vor Datum'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'js'
+    headline:
+      type: string
+      defaultValue: '2017'
+      ui:
+        label: 'Anfang (Jahr)'
         reloadIfChanged: TRUE
         inspector:
           group: 'js'
@@ -201,6 +186,21 @@ aloha-default: &aloha-default
         reloadIfChanged: TRUE
         inspector:
           group: 'js'
+    subheadline:
+      type: string
+      #defaultValue: ''
+      ui:
+        label: 'Ende (Jahr)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'js'
+    text:
+      type: string
+      defaultValue: 'Hier darf Text rein'
+      ui:
+        label: 'Text'
+        inlineEditable: true
+        aloha: *aloha-default
 
 
 # 2 Spalter
