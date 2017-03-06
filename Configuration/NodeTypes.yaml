@@ -169,13 +169,17 @@ aloha-default: &aloha-default
       defaultValue: '2017'
       ui:
         label: 'Headline'
-        inlineEditable: true
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'js'
     subheadline:
       type: string
       #defaultValue: ''
       ui:
         label: 'zusätliche Headline'
-        inlineEditable: true
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'js'
     text:
       type: string
       defaultValue: 'Hier darf Text rein'

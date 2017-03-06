@@ -6,13 +6,13 @@
             <f:if condition="{since}">
                 <div class="vita--date-until">seit</div>
             </f:if>
-            {neos:contentElement.editable(property: 'headline')}
+            {headline}
         </div>
         <div class="vita--date-to">
             <f:if condition="{until}">
                 <div class="vita--date-until">bis</div>
             </f:if>
-            {neos:contentElement.editable(property: 'subheadline')}
+            {subheadline}
         </div>
     </div>
     <div class="columns small-12 medium-9 vita--content">
