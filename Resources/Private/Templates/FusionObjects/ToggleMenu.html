@@ -2,7 +2,7 @@
 
 <f:for each="{items}" as="item" iteration="it">
     <div class="columns large-4{f:if(condition: '{it.cycle} == 2', then: ' large-push-4')}{f:if(condition: '{it.cycle} == 3', then: ' large-pull-4')} {item.property.area}">
-        <ul class="vertical menu" data-accordion-menu>
+        <ul class="vertical menu">
             <f:if condition="{item.subItems}">
                 <f:render section="submenu" arguments="{items: item.subItems}"></f:render>
             </f:if>
@@ -11,7 +11,7 @@
 </f:for>
 
 <f:section name="submenu">
-    <f:if condition="{level}"><ul class="vertical menu" data-accordion-menu></f:if>
+    <f:if condition="{level}"><ul class="vertical menu sublevel"></f:if>
     <f:for each="{items}" as="item">
             <li>
                 <neos:link.node node="{item.node}" />
