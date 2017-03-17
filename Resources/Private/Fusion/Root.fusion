@@ -37,10 +37,11 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 		attributes.style.@process {
 			backgroundImage = ${value + ' ' + 'background-image: url(' + bgImageUri + ');'}
 	   		backgroundImage.@if.backgroundImageIsSet = ${ q(node).property('backgroundimage') == '' ? false : true }
+
 			backgroundImageRoot = ${value + ' ' + 'background-image: url(' + bgRootImageUri + ');'}
 	   		backgroundImageRoot.@if {
-	   			backgroundImageIsSet = ${ q(site).property('backgroundimage') == '' ? true : false }
-	   			backgroundImageIsSet = ${ q(site).property('backgroundimage') == '' ? true : false }
+	   			backgroundImageIsSet = ${ q(node).property('backgroundimage') == '' ? true : false }
+	   			backgroundImageIsSet = ${ q(site).property('backgroundimage') == '' ? false : true }
 	   		}
 	   	}
 	   attributes.class = ${q(node).property('area')}
