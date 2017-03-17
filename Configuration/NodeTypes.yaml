@@ -10,6 +10,7 @@ usedNodeTypes: &usedNodeTypes
   'Neos.NodeTypes:Html': TRUE
   'Js.TherapieOx:Vitaitem': TRUE
   'Js.TherapieOx:Areabox': TRUE
+  'Js.TherapieOx:Quote': TRUE
   'Js.TherapieOx:Twocolumns': TRUE
   #'Neos.NodeTypes:TwoColumn': TRUE
   '*': FALSE
@@ -19,6 +20,7 @@ usedNodeTypesColumns: &usedNodeTypesColumns
   'Neos.NodeTypes:Image': TRUE
   'Neos.NodeTypes:Html': TRUE
   'Js.TherapieOx:Areabox': TRUE
+  'Js.TherapieOx:Quote': TRUE
   'Js.TherapieOx:Vitaitem': TRUE
   '*': FALSE
 
@@ -180,6 +182,28 @@ aloha-default: &aloha-default
           icon: 'icon-gears'
   properties:
     area: *area
+
+# Vita Element
+'Js.TherapieOx:Quote':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Quote'
+    group: 'general'
+    inspector:
+      groups:
+        js:
+          label: 'Quote-Einstellungen'
+          icon: 'icon-gears'
+          position: 1
+  properties:
+    text:
+      type: string
+      defaultValue: 'Hier darf Text rein'
+      ui:
+        label: 'Text'
+        inlineEditable: true
+        aloha: *aloha-default
 
 # Vita Element
 'Js.TherapieOx:Vitaitem':
