@@ -59,6 +59,7 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 
 			mobilemenu = Js.TherapieOx:Menu {
 				templatePath = 'resource://Js.TherapieOx/Private/Templates/FusionObjects/MobileMenu.html'
+			    maximumLevels = 3
 			}
 
 			footermenu = Menu
