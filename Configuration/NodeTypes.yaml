@@ -161,23 +161,25 @@ aloha-default: &aloha-default
 
 # Area Box
 'Js.TherapieOx:Areabox':
+  'Vendor:Box':
   superTypes:
-    'Neos.Neos:ContentCollection': true
+    'Neos.Neos:Content': TRUE
+  childNodes:
+    'boxContent':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes: *usedNodeTypes
   ui:
     label: 'Box'
     group: 'general'
+    inlineEditable: true
     inspector:
       groups:
-        js:
+        document:
           label: 'Box Einstellungen'
           icon: 'icon-gears'
-          position: 1
   properties:
     area: *area
-  childNodes:
-    'boxContent':
-      constraints:
-        nodeTypes: *usedNodeTypes
 
 # Vita Element
 'Js.TherapieOx:Vitaitem':

@@ -97,6 +97,13 @@ prototype(Js.TherapieOx:PortalPage.Document) < prototype(Neos.NodeTypes:Page.Doc
 prototype(Js.TherapieOx:HomePage.Document) < prototype(Neos.NodeTypes:Page.Document)
 
 
+prototype(Js.TherapieOx:Areabox) < prototype(Neos.Neos:Content) {
+        boxContent = Neos.Neos:ContentCollection
+        boxContent {
+                nodePath = 'boxContent'
+        }
+}
+
 prototype(Js.TherapieOx:Twocolumns) < prototype(Neos.Neos:Content) {
         templatePath = 'resource://Js.TherapieOx/Private/Templates/NodeTypes/Twocolumns.html'
 
