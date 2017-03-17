@@ -9,6 +9,7 @@ usedNodeTypes: &usedNodeTypes
   'Neos.NodeTypes:Image': TRUE
   'Neos.NodeTypes:Html': TRUE
   'Js.TherapieOx:Vitaitem': TRUE
+  'Js.TherapieOx:Areabox': TRUE
   'Js.TherapieOx:Twocolumns': TRUE
   #'Neos.NodeTypes:TwoColumn': TRUE
   '*': FALSE
@@ -17,6 +18,7 @@ usedNodeTypesColumns: &usedNodeTypesColumns
   'Neos.NodeTypes:Text': TRUE
   'Neos.NodeTypes:Image': TRUE
   'Neos.NodeTypes:Html': TRUE
+  'Js.TherapieOx:Areabox': TRUE
   'Js.TherapieOx:Vitaitem': TRUE
   '*': FALSE
 
