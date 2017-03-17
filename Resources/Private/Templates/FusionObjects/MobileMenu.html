@@ -16,7 +16,7 @@
     </f:for>
 
 <f:section name="submenu">
-    <f:if condition="{level}"><ul class="menu vertical nested"></f:if>
+    <f:if condition="{level}"><ul class="menu vertical nested" data-accordion-menu data-multi-open="false"></f:if>
     <f:for each="{items}" as="item">
         <li>
             <neos:link.node node="{item.node}" rel="nofollow" />
