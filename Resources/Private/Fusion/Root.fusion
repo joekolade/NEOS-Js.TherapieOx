@@ -25,12 +25,12 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 		}
 	}
 
-	# @context.imageUri = TYPO3.Neos:ImageUri {
-	# 	asset = ${q(node).property('backgroundimage')}
-	# }
+	@context.imageUri = Neos.Neos:ImageUri {
+		asset = ${q(node).property('backgroundimage')}
+	}
 	bodyTag {
-	   # attributes.style.@process.backgroundImage = ${value + ' ' + 'background-image: url(' + imageUri + ');'}
-	   # attributes.style.@process.backgroundImage.@if.backgroundImageIsSet = ${ q(node).property('backgroundimage') == '' ? false : true }
+	   attributes.style.@process.backgroundImage = ${value + ' ' + 'background-image: url(' + imageUri + ');'}
+	   attributes.style.@process.backgroundImage.@if.backgroundImageIsSet = ${ q(node).property('backgroundimage') == '' ? false : true }
 	   attributes.class = ${q(node).property('area')}
 	   #attributes.class.@process.area.@if.areaIsSet
 	}
