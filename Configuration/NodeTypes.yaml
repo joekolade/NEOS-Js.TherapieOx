@@ -45,7 +45,7 @@ usedNodeTypesColumns: &usedNodeTypesColumns
     #     inspector:
     #       group: 'document'
     #       position: end
-    area:
+    area: &area
       type: string
       defaultValue: 'both'
       ui:
@@ -157,6 +157,25 @@ aloha-default: &aloha-default
   'autoparagraph': true # Automatically wrap non-wrapped text blocks in paragraph blocks.
 
 
+# Area Box
+'Js.TherapieOx:Areabox':
+  superTypes:
+    'Neos.Neos:ContentCollection': true
+  ui:
+    label: 'Box'
+    group: 'general'
+    inspector:
+      groups:
+        js:
+          label: 'Box Einstellungen'
+          icon: 'icon-gears'
+          position: 1
+  properties:
+    area: *area
+  childNodes:
+    'boxContent':
+      constraints:
+        nodeTypes: *usedNodeTypes
 
 # Vita Element
 'Js.TherapieOx:Vitaitem':
