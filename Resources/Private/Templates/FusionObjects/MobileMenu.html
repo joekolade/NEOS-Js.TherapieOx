@@ -8,7 +8,7 @@
                 </f:then>
             </f:if>
             <f:if condition="{item.subItems}">
-                <ul class="vertical menu" data-accordion-menu>
+                <ul class="vertical menu" data-accordion-menu data-multi-open="false">
                     <f:render section="submenu" arguments="{items: item.subItems}"></f:render>
                 </ul>
             </f:if>
