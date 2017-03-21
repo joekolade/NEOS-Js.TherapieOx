@@ -21,7 +21,8 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 			templatePath = 'resource://Js.TherapieOx/Private/Templates/Page/Default.html'
 			sectionName = 'headScripts'
 
-			piwik.id = ${q(site).property('piwikid')}
+			piwikurl = ${Configuration.setting('Js.TherapieOx.PiwkiUrl')}
+			piwkisiteid = ${Configuration.setting('Js.TherapieOx.PiwkiSiteId')}
 		}
 	}
 
