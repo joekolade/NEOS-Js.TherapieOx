@@ -113,21 +113,25 @@ prototype(Js.TherapieOx:HomePage.Document) < prototype(Neos.NodeTypes:Page.Docum
 
 
 prototype(Js.TherapieOx:Areabox) < prototype(Neos.Neos:Content) {
-        boxContent = Neos.Neos:ContentCollection
-        boxContent {
-                nodePath = 'boxContent'
-        }
+    boxContent = Neos.Neos:ContentCollection
+    boxContent {
+            nodePath = 'boxContent'
+    }
 }
 
 prototype(Js.TherapieOx:Twocolumns) < prototype(Neos.Neos:Content) {
-        templatePath = 'resource://Js.TherapieOx/Private/Templates/NodeTypes/Twocolumns.html'
+    templatePath = 'resource://Js.TherapieOx/Private/Templates/NodeTypes/Twocolumns.html'
 
-        column0Content = Neos.Neos:ContentCollection
-        column0Content {
-                nodePath = 'column0'
-        }
-        column1Content = Neos.Neos:ContentCollection
-        column1Content {
-                nodePath = 'column1'
-        }
+    column0Content = Neos.Neos:ContentCollection
+    column0Content {
+            nodePath = 'column0'
+    }
+    column1Content = Neos.Neos:ContentCollection
+    column1Content {
+            nodePath = 'column1'
+    }
+}
+
+prototype(Neos.NodeTypes:Image) {
+	maximumWidth = 610
 }

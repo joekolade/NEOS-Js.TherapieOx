@@ -1,4 +1,47 @@
-{namespace media=TYPO3\Media\ViewHelpers}
+
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+<div{attributes -> f:format.raw()}>
+    <f:render partial="Image" arguments="{_all}" />
+    <figure{f:if(condition: imageClassName, then: ' class="{imageClassName}"')}>
+        <f:if condition="{image}">
+            <f:then>
+                <f:if condition="{link}">
+                    <f:then>
+                        <a href="{link}">
+                            <f:render section="imageRendering" arguments="{_all}" />
+                        </a>
+                    </f:then>
+                    <f:else>
+                        <f:render section="imageRendering" arguments="{_all}" />
+                    </f:else>
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:if condition="{neos:rendering.inEditMode()}">
+                    <img src="{f:uri.resource(package: 'Neos.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="neos-handle" />
+                </f:if>
+            </f:else>
+        </f:if>
+
+        <f:section name="imageRendering">
+            <media:image
+                additionalAttributes="{srcset: '{media:uri.image(image: image, maximumWidth: 1220)} 2x,
+                    {media:uri.image(image: image, maximumWidth: 610)} 1x'}"
+                asset="{image}"
+                alt="{alternativeText}"
+                title="{title}"
+                maximumWidth="610" />
+        </f:section>
+
+        <f:if condition="{hasCaption}">
+            <figcaption>
+                {neos:contentElement.editable(property: 'caption', node: node)}
+            </figcaption>
+        </f:if>
+    </figure>
+</div>
+
 <media:image
     additionalAttributes="{srcset: '{media:uri.image(image: image, maximumWidth: 1220)} 2x,
         {media:uri.image(image: image, maximumWidth: 610)} 1x'}"
