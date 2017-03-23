@@ -1,0 +1,8 @@
+{namespace media=TYPO3\Media\ViewHelpers}
+<media:image
+    additionalAttributes="{srcset: '{media:uri.image(image: image, maximumWidth: 1220)} 2x,
+        {media:uri.image(image: image, maximumWidth: 610)} 1x'}"
+    asset="{image}"
+    alt="{alternativeText}"
+    title="{title}"
+    maximumWidth="610" />
