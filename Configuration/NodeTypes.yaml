@@ -1,88 +1,83 @@
 # If you need more than just the "main" content area you can uncomment the snippet below. It will add a "sidebar" area
 # to your pages. You can add as many areas as you like, still only those that are rendered in your Fusion-code and
 # Template are visible on your page.
----
 
-usedNodeTypes: &usedNodeTypes
-  'Neos.NodeTypes:Headline': TRUE
-  'Neos.NodeTypes:Text': TRUE
-  'Neos.NodeTypes:Image': TRUE
-  'Neos.NodeTypes:Html': TRUE
-  'Js.TherapieOx:Vitaitem': TRUE
-  'Js.TherapieOx:Areabox': TRUE
-  'Js.TherapieOx:Quote': TRUE
-  'Js.TherapieOx:Twocolumns': TRUE
-  #'Neos.NodeTypes:TwoColumn': TRUE
-  '*': FALSE
-usedNodeTypesColumns: &usedNodeTypesColumns
-  'Neos.NodeTypes:Headline': TRUE
-  'Neos.NodeTypes:Text': TRUE
-  'Neos.NodeTypes:Image': TRUE
-  'Neos.NodeTypes:Html': TRUE
-  'Js.TherapieOx:Areabox': TRUE
-  'Js.TherapieOx:Quote': TRUE
-  'Js.TherapieOx:Vitaitem': TRUE
-  '*': FALSE
-
+usedNodeTypes:
+  'Neos.NodeTypes:Headline': true
+  'Neos.NodeTypes:Text': true
+  'Neos.NodeTypes:Image': true
+  'Neos.NodeTypes:Html': true
+  'Js.TherapieOx:Vitaitem': true
+  'Js.TherapieOx:Areabox': true
+  'Js.TherapieOx:Quote': true
+  'Js.TherapieOx:Twocolumns': true
+  '*': false
+usedNodeTypesColumns:
+  'Neos.NodeTypes:Headline': true
+  'Neos.NodeTypes:Text': true
+  'Neos.NodeTypes:Image': true
+  'Neos.NodeTypes:Html': true
+  'Js.TherapieOx:Areabox': true
+  'Js.TherapieOx:Quote': true
+  'Js.TherapieOx:Vitaitem': true
+  '*': false
 'Neos.NodeTypes:Page':
   childNodes:
-    'main':
+    main:
       constraints:
-        nodeTypes: *usedNodeTypes
+        nodeTypes:
+          'Neos.NodeTypes:Headline': true
+          'Neos.NodeTypes:Text': true
+          'Neos.NodeTypes:Image': true
+          'Neos.NodeTypes:Html': true
+          'Js.TherapieOx:Vitaitem': true
+          'Js.TherapieOx:Areabox': true
+          'Js.TherapieOx:Quote': true
+          'Js.TherapieOx:Twocolumns': true
+          '*': false
   properties:
     backgroundimage:
-      type: 'Neos\Media\Domain\Model\ImageInterface'
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: 'Hintergrund Bild'
         inspector:
-          group: 'document'
+          group: document
           editorOptions:
             features:
-              crop: TRUE
-              resize: TRUE
-    # mobilenavititle:
-    #   type: string
-    #   defaultValue: ''
-    #   ui:
-    #     label: 'Seitenbezeichnung im mobilen Menü'
-    #     reloadIfChanged: TRUE
-    #     inspector:
-    #       group: 'document'
-    #       position: end
-    area: &area
+              crop: true
+              resize: true
+    area:
       type: string
-      defaultValue: 'both'
+      defaultValue: both
       ui:
-        label: 'Zugehörigkeit'
-        reloadIfChanged: TRUE
+        label: Zugehörigkeit
+        reloadIfChanged: true
         inspector:
-          group: 'document'
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          group: document
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'mah':
-                label: 'Mirjam'
-                icon: 'icon-female'
-              'gs':
-                label: 'Günter'
-                icon: 'icon-male'
-              'both':
-                label: 'Beide'
-                icon: 'users'
-
-# PortalPage
+              mah:
+                label: Mirjam
+                icon: icon-female
+              gs:
+                label: Günter
+                icon: icon-male
+              both:
+                label: Beide
+                icon: users
 'Js.TherapieOx:PortalPage':
   superTypes:
     'Neos.NodeTypes:Page': true
   ui:
     label: 'Portal Seite'
-    group: 'general'
-    icon: 'icon-columns'
+    group: general
+    icon: icon-columns
     inspector:
       groups:
         js:
-          label: 'Startseiten-Daten'
-          icon: 'icon-anchor'
+          label: Startseiten-Daten
+          icon: icon-anchor
           position: 1
   properties:
     area:
@@ -90,180 +85,257 @@ usedNodeTypesColumns: &usedNodeTypesColumns
         inspector:
           editorOptions:
             values:
-              'all':
-                label: 'Startseite'
-                icon: 'asterisk'
+              all:
+                label: Startseite
+                icon: asterisk
     siteheadline:
       type: string
       ui:
         label: 'Seiten Titel'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'js'
+          group: js
     piwikid:
       type: string
       ui:
         label: 'Piwik Site-Id'
         inspector:
-          group: 'js'
-
-
-# Homepage for each area
+          group: js
 'Js.TherapieOx:HomePage':
   superTypes:
     'Neos.NodeTypes:Page': true
   ui:
-    label: 'Startseite'
-    group: 'general'
-    icon: 'icon-home'
-
-
-# Aloha default config
-aloha-default: &aloha-default
-  'format': # Enable specific formatting options.
-    'strong': true
-    'b': false
-    'em': true
-    'i': false
-    'u': true
-    'sub': false
-    'sup': false
-    'p': true
-    'h1': true
-    'h2': true
-    'h3': true
-    'h4': false
-    'h5': false
-    'h6': false
-    'code': false
-    'removeFormat': true
-  'table':
-    'table': false
-  'link':
-    'a': true
-  'list':
-    'ul': true
-    'ol': false
-  'alignment':
-    'left': true
-    'center': true
-    'right': true
-    'justify': false
-  'formatlesspaste':
-    # Show toggle button for formatless pasting.
-    'button': false
-    # Whether the formatless pasting should be enable by default.
-    'formatlessPasteOption': false
-    # If not set the default setting is used: 'a', 'abbr', 'b', 'bdi', 'bdo', 'cite', 'code', 'del', 'dfn',
-    # 'em', 'i', 'ins', 'kbd', 'mark', 'q', 'rp', 'rt', 'ruby', 's', 'samp', 'small', 'strong', 'sub', 'sup',
-    # 'time', 'u', 'var'
-    'strippedElements': ['a']
-  'autoparagraph': true # Automatically wrap non-wrapped text blocks in paragraph blocks.
-
-
-# Area Box
+    label: Startseite
+    group: general
+    icon: icon-home
+aloha-default:
+  format:
+    strong: true
+    b: false
+    em: true
+    i: false
+    u: true
+    sub: false
+    sup: false
+    p: true
+    h1: true
+    h2: true
+    h3: true
+    h4: false
+    h5: false
+    h6: false
+    code: false
+    removeFormat: true
+  table:
+    table: false
+  link:
+    a: true
+  list:
+    ul: true
+    ol: false
+  alignment:
+    left: true
+    center: true
+    right: true
+    justify: false
+  formatlesspaste:
+    button: false
+    formatlessPasteOption: false
+    strippedElements:
+      - a
+  autoparagraph: true
 'Js.TherapieOx:Areabox':
-  'Vendor:Box':
+  'Vendor:Box': null
   superTypes:
-    'Neos.Neos:Content': TRUE
+    'Neos.Neos:Content': true
   childNodes:
-    'boxContent':
+    boxContent:
       type: 'Neos.Neos:ContentCollection'
       constraints:
-        nodeTypes: *usedNodeTypes
+        nodeTypes:
+          'Neos.NodeTypes:Headline': true
+          'Neos.NodeTypes:Text': true
+          'Neos.NodeTypes:Image': true
+          'Neos.NodeTypes:Html': true
+          'Js.TherapieOx:Vitaitem': true
+          'Js.TherapieOx:Areabox': true
+          'Js.TherapieOx:Quote': true
+          'Js.TherapieOx:Twocolumns': true
+          '*': false
   ui:
-    label: 'Box'
-    group: 'general'
-    icon: 'icon-dropbox'
+    label: Box
+    group: general
+    icon: icon-dropbox
     inlineEditable: true
     inspector:
       groups:
         document:
           label: 'Box Einstellungen'
-          icon: 'icon-gears'
+          icon: icon-gears
   properties:
-    area: *area
-
-# Vita Element
+    area:
+      type: string
+      defaultValue: both
+      ui:
+        label: Zugehörigkeit
+        reloadIfChanged: true
+        inspector:
+          group: document
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              mah:
+                label: Mirjam
+                icon: icon-female
+              gs:
+                label: Günter
+                icon: icon-male
+              both:
+                label: Beide
+                icon: users
 'Js.TherapieOx:Quote':
   superTypes:
     'Neos.Neos:Content': true
   ui:
-    label: 'Quote'
-    group: 'general'
-    icon: 'icon-comment'
+    label: Quote
+    group: general
+    icon: icon-comment
     inspector:
       groups:
         js:
-          label: 'Quote-Einstellungen'
-          icon: 'icon-gears'
+          label: Quote-Einstellungen
+          icon: icon-gears
           position: 1
   properties:
     text:
       type: string
       defaultValue: 'Hier darf Text rein'
       ui:
-        label: 'Text'
+        label: Text
         inlineEditable: true
-        aloha: *aloha-default
-
-# Vita Element
+        aloha:
+          format:
+            strong: true
+            b: false
+            em: true
+            i: false
+            u: true
+            sub: false
+            sup: false
+            p: true
+            h1: true
+            h2: true
+            h3: true
+            h4: false
+            h5: false
+            h6: false
+            code: false
+            removeFormat: true
+          table:
+            table: false
+          link:
+            a: true
+          list:
+            ul: true
+            ol: false
+          alignment:
+            left: true
+            center: true
+            right: true
+            justify: false
+          formatlesspaste:
+            button: false
+            formatlessPasteOption: false
+            strippedElements:
+              - a
+          autoparagraph: true
 'Js.TherapieOx:Vitaitem':
   superTypes:
     'Neos.Neos:Content': true
   ui:
     label: 'Vita Eintrag'
-    group: 'general'
+    group: general
     inspector:
       groups:
         js:
-          label: 'Vita-Einstellungen'
-          icon: 'icon-gears'
+          label: Vita-Einstellungen
+          icon: icon-gears
           position: 1
   properties:
-    'since':
+    since:
       type: boolean
       ui:
         label: '"Seit" vor Datum'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'js'
+          group: js
     headline:
       type: string
       defaultValue: '2017'
       ui:
         label: 'Anfang (Jahr)'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'js'
-    'until':
+          group: js
+    until:
       type: boolean
       ui:
         label: '"bis" zwischen Datum'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'js'
+          group: js
     subheadline:
       type: string
-      #defaultValue: ''
       ui:
         label: 'Ende (Jahr)'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'js'
+          group: js
     text:
       type: string
       defaultValue: 'Hier darf Text rein'
       ui:
-        label: 'Text'
+        label: Text
         inlineEditable: true
-        aloha: *aloha-default
-
-
-# 2 Spalter
+        aloha:
+          format:
+            strong: true
+            b: false
+            em: true
+            i: false
+            u: true
+            sub: false
+            sup: false
+            p: true
+            h1: true
+            h2: true
+            h3: true
+            h4: false
+            h5: false
+            h6: false
+            code: false
+            removeFormat: true
+          table:
+            table: false
+          link:
+            a: true
+          list:
+            ul: true
+            ol: false
+          alignment:
+            left: true
+            center: true
+            right: true
+            justify: false
+          formatlesspaste:
+            button: false
+            formatlessPasteOption: false
+            strippedElements:
+              - a
+          autoparagraph: true
 'Js.TherapieOx:Twocolumns':
   superTypes:
-    - 'Neos.Neos:Content'
+    'Neos.Neos:Content': true
   ui:
     group: general
     label: '2 Spalter'
@@ -272,39 +344,55 @@ aloha-default: &aloha-default
     inspector:
       groups:
         js:
-          label: 'Einstellungen'
-          icon: 'icon-gears'
+          label: Einstellungen
+          icon: icon-gears
           position: 1
   properties:
     area:
       type: string
-      defaultValue: 'inherit'
+      defaultValue: inherit
       ui:
-        label: 'Zugehörigkeit'
-        reloadIfChanged: TRUE
+        label: Zugehörigkeit
+        reloadIfChanged: true
         inspector:
-          group: 'js'
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          group: js
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'inherit':
+              inherit:
                 label: 'vererbt (wie Seite)'
-                icon: 'icon-child'
-              'mah':
-                label: 'Mirjam'
-                icon: 'icon-female'
-              'gs':
-                label: 'Günter'
-                icon: 'icon-male'
-              'both':
-                label: 'Beide'
-                icon: 'users'
+                icon: icon-child
+              mah:
+                label: Mirjam
+                icon: icon-female
+              gs:
+                label: Günter
+                icon: icon-male
+              both:
+                label: Beide
+                icon: users
   childNodes:
     column0:
       type: 'Neos.Neos:ContentCollection'
       constraints:
-        nodeTypes: *usedNodeTypesColumns
+        nodeTypes:
+          'Neos.NodeTypes:Headline': true
+          'Neos.NodeTypes:Text': true
+          'Neos.NodeTypes:Image': true
+          'Neos.NodeTypes:Html': true
+          'Js.TherapieOx:Areabox': true
+          'Js.TherapieOx:Quote': true
+          'Js.TherapieOx:Vitaitem': true
+          '*': false
     column1:
       type: 'Neos.Neos:ContentCollection'
       constraints:
-        nodeTypes: *usedNodeTypesColumns
+        nodeTypes:
+          'Neos.NodeTypes:Headline': true
+          'Neos.NodeTypes:Text': true
+          'Neos.NodeTypes:Image': true
+          'Neos.NodeTypes:Html': true
+          'Js.TherapieOx:Areabox': true
+          'Js.TherapieOx:Quote': true
+          'Js.TherapieOx:Vitaitem': true
+          '*': false
