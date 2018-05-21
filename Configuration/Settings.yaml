@@ -24,7 +24,7 @@ ObisConcept:
     enable: true                # Wether to enable the notice.
     includeJavaScript: true     # Auto-include cookieconsent's javascript file.
     includeCss: true            # Auto-include cookieconsent's stylesheet file.
-    policyPageNode: ''          # The page identifier of your privacy statement.
+    policyPageNode: 'node-e1p298iwna0i9'          # The page identifier of your privacy statement.
     translations:               # Change the translation source for custom texts.
       package: 'ObisConcept.CookieConsent'
       source: 'Main'
