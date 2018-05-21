@@ -34,8 +34,8 @@ ObisConcept:
                                 # "block", "classic", "edgeless", "wire"
     palette:
       popup:
-        background: '#000'      # The background color and
+        background: '#74b72b'      # The background color and
         text: '#fff'            # the text color of the notice box
       button:
-        background: '#74b72b'   # The background color and
-        text: '#FFF'            # the text color of the dismiss-button
+        background: '#fff'   # The background color and
+        text: '#74b72b'            # the text color of the dismiss-button
