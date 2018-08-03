@@ -4,15 +4,29 @@ Neos:
       defaultLanguage: 'de'
       backendLoginForm:
         backgroundImage: 'resource://Js.TherapieOx/Public/Images/sporn_bc.jpg'
+    Ui:
+      frontendConfiguration:
+        defaultInlineEditor: 'ckeditor5'
   Flow:
     i18n:
       defaultLocale: de
 Js:
   TherapieOx:
     Logo_SVG: '<svg version="1.1" id="logo-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 367.8 290" style="enable-background:new 0 0 367.8 290" xml:space="preserve"><g><circle cx=144 cy=146 r=144 /><ellipse class=st0 cx=149 cy=140.5 rx=139 ry=140.5 /><path class="st1 leaf right" d="M289.8,192.6c16-2.4,30.3,2.7,44.9-8.9c13-10.3,17.5-27.1,33.2-37.2c-16.3,12.1-28.7-3.6-45.6-3.7 c-19.9-0.1-29.5,19-35.1,36.8c8.8-17.1,29.7-23.7,48-20.7c-21.8,3.4-40.6,17.1-49.4,36.2L289.8,192.6z" /><path class="st1 leaf left" d="M269.4,200.8c-12.3-3.2-23.8-0.3-34.2-10.4c-9.3-9.1-11.5-22.5-22.9-31.5c11.7,10.7,22.5-0.5,35.7,0.7 c15.5,1.5,21.5,17.1,24.4,31.3c-5.5-14-21.2-20.7-35.6-19.8c16.7,4.3,30.2,16.5,35.6,32L269.4,200.8z" /><path class="st1 leaf center" d="M283.7,152.7c-8.2-8.1-18.5-11.1-22.1-23.9c-3.1-11.4,1.3-22.9-3.5-35.3c4.3,13.8,18,9.9,27.7,17 c11.5,8.3,9,23.3,4.8,35.8c2.1-13.5-7.1-26-18.9-32c11.1,11.1,16.2,26.8,13.3,41.5L283.7,152.7z" /> </g></svg>'
-    PiwkiUrl: 'stats.schaefer-webentwicklung.de'
-    PiwkiSiteId: '17'
+    #PiwkiUrl: 'stats.schaefer-webentwicklung.de'
+    #PiwkiSiteId: '17'
 
+Flowpack:
+  Neos:
+    Matomo:
+      host: 'stats.schaefer-webentwicklung.de'
+      protocol: 'https'
+      token_auth: '08627564a1cd12f93d117d7f57824421'
+      idSite: 6
+      apiTimeout: 10
+      cacheLifetimeByPeriod:
+        year: 86400
+        day: 3600
 
 MOC:
   ImageOptimizer:

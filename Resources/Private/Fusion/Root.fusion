@@ -20,9 +20,6 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 		javascripts.site = Neos.Fusion:Template {
 			templatePath = 'resource://Js.TherapieOx/Private/Templates/Page/Default.html'
 			sectionName = 'headScripts'
-
-			piwikurl = ${Configuration.setting('Js.TherapieOx.PiwkiUrl')}
-			piwkisiteid = ${Configuration.setting('Js.TherapieOx.PiwkiSiteId')}
 		}
 	}
 
