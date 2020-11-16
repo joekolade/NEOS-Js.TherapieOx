@@ -2,6 +2,6 @@
 <f:for each="{items}" as="item" iteration="it">
     <div class="columns small-12 large-4{f:if(condition: '{it.cycle} == 2', then: ' large-push-4')}{f:if(condition: '{it.cycle} == 3', then: ' large-pull-4')}">
         <neos:link.node node="{item.node}"
-            class="button menu-toggle expanded {item.property.area}" />
+            class="button menu-toggle expanded gs {item.property.area}" />
     </div>
 </f:for>

@@ -213,42 +213,32 @@ aloha-default:
       ui:
         label: Text
         inlineEditable: true
-        aloha:
-          format:
-            strong: true
-            b: false
-            em: true
-            i: false
-            u: true
-            sub: false
-            sup: false
-            p: true
-            h1: true
-            h2: true
-            h3: true
-            h4: false
-            h5: false
-            h6: false
-            code: false
-            removeFormat: true
-          table:
-            table: false
-          link:
-            a: true
-          list:
-            ul: true
-            ol: false
-          alignment:
-            left: true
-            center: true
-            right: true
-            justify: false
-          formatlesspaste:
-            button: false
-            formatlessPasteOption: false
-            strippedElements:
-              - a
-          autoparagraph: true
+        inline:
+          editorOptions:
+            formatting:
+              strong: false
+              em: false
+              sub: false
+              sup: false
+              p: true
+              h1: true
+              h2: true
+              h3: true
+              h4: false
+              h5: false
+              h6: false
+              code: false
+              removeFormat: true
+              table: false
+              a: true
+              ul: true
+              ol: false
+              left: true
+              center: true
+              right: true
+              justify: false
+              underline: true
+            autoparagraph: true
 'Js.TherapieOx:Vitaitem':
   superTypes:
     'Neos.Neos:Content': true
@@ -297,42 +287,32 @@ aloha-default:
       ui:
         label: Text
         inlineEditable: true
-        aloha:
-          format:
-            strong: true
-            b: false
-            em: true
-            i: false
-            u: true
-            sub: false
-            sup: false
-            p: true
-            h1: true
-            h2: true
-            h3: true
-            h4: false
-            h5: false
-            h6: false
-            code: false
-            removeFormat: true
-          table:
-            table: false
-          link:
-            a: true
-          list:
-            ul: true
-            ol: false
-          alignment:
-            left: true
-            center: true
-            right: true
-            justify: false
-          formatlesspaste:
-            button: false
-            formatlessPasteOption: false
-            strippedElements:
-              - a
-          autoparagraph: true
+        inline:
+          editorOptions:
+            formatting:
+              strong: false
+              em: false
+              sub: false
+              sup: false
+              p: true
+              h1: true
+              h2: true
+              h3: true
+              h4: false
+              h5: false
+              h6: false
+              code: false
+              removeFormat: true
+              table: false
+              a: true
+              ul: true
+              ol: false
+              left: true
+              center: true
+              right: true
+              justify: false
+              underline: true
+            autoparagraph: true
 'Js.TherapieOx:Twocolumns':
   superTypes:
     'Neos.Neos:Content': true

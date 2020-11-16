@@ -3,10 +3,16 @@
  */
 
 root {
-	default {
-		type = ${q(node).property('_nodeType') + '.Document'}
-		renderPath >
-	}
+//    default {
+//        type = ${q(node).property('_nodeType') + '.Document'}
+//        renderPath >
+//    }
+    documentType {
+        condition = Neos.Fusion:CanRender {
+            type = ${q(documentNode).property('_nodeType.name') + '.Document'}
+        }
+        type = ${q(documentNode).property('_nodeType.name') + '.Document'}
+    }
 }
 
 prototype(Neos.NodeTypes:Page.Document) >
@@ -73,7 +79,7 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 			    maximumLevels = 3
 			}
 
-			footermenu = Menu
+			footermenu = Neos.Neos:Menu
 		    footermenu {
 		        #entryLevel = 1
 		        templatePath = 'resource://Js.TherapieOx/Private/Templates/FusionObjects/FooterMenu.html'
@@ -100,14 +106,12 @@ prototype(Neos.NodeTypes:Page.Document) < prototype(Neos.Neos:Page) {
 }
 
 # Menu with node properties
-#
 prototype(Js.TherapieOx:Menu) >
 prototype(Js.TherapieOx:Menu) < prototype(Neos.Neos:Menu)
-prototype(Js.TherapieOx:Menu).@class = 'Js\\TherapieOx\\Fusion\\MenuImplementation'
+//prototype(Js.TherapieOx:Menu).@class = 'Js\\TherapieOx\\Fusion\\MenuImplementation'
 
 prototype(Js.TherapieOx:PortalPage.Document) < prototype(Neos.NodeTypes:Page.Document)
 prototype(Js.TherapieOx:HomePage.Document) < prototype(Neos.NodeTypes:Page.Document)
-
 
 prototype(Js.TherapieOx:Areabox) < prototype(Neos.Neos:Content) {
     boxContent = Neos.Neos:ContentCollection
